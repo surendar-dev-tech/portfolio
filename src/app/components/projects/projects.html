@@ -1,0 +1,121 @@
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Projects</h2>
+
+    <div class="row">
+
+      <!-- ========================= -->
+      <!-- Project 1 -->
+      <!-- ========================= -->
+      <div class="col-12 mb-5" data-aos="fade-up">
+        <div class="card p-4 shadow border-0 bg-dark text-light">
+
+          <div class="row align-items-center">
+
+            <!-- Image Column -->
+            <div class="col-md-6 text-center mb-3 mb-md-0">
+              <img 
+                src="mysaleza.png"
+                alt="MySaleza CRM"
+                class="project-image"
+                (click)="openImage($event)">
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-md-6">
+              <h5 class="fw-bold mb-3">
+                MySaleza — CRM Management System
+              </h5>
+
+              <p>
+                Designed and developed a full-stack CRM platform to manage leads,
+                customers, products, and sales workflows using microservice architecture.
+              </p>
+
+              <ul>
+                <li>20+ REST APIs using Spring Boot</li>
+                <li>JWT authentication & role-based authorization</li>
+                <li>Optimized JPA queries for performance</li>
+                <li>MariaDB relational schema with indexing</li>
+              </ul>
+
+              <div class="mt-3">
+                <span class="badge bg-primary m-1">Spring Boot</span>
+                <span class="badge bg-primary m-1">Angular</span>
+                <span class="badge bg-primary m-1">Microservices</span>
+                <span class="badge bg-primary m-1">JWT</span>
+                <span class="badge bg-primary m-1">MariaDB</span>
+              </div>
+
+              <div class="mt-3">
+                <a href="https://github.com/surendar-dev-tech"
+                   target="_blank"
+                   class="btn btn-outline-light btn-sm">
+                   GitHub
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- Project 2 -->
+      <!-- ========================= -->
+      <div class="col-md-6 mb-4"
+           data-aos="fade-up"
+           data-aos-delay="200">
+        <div class="card p-4 h-100 shadow border-0 bg-dark text-light">
+
+          <h5 class="fw-bold mb-3">
+            Job Transition Assistant
+          </h5>
+
+          <p>
+            Built a secure web platform to help job seekers track learning progress,
+            manage applications, and monitor career transition activities.
+          </p>
+
+          <ul>
+            <li>Implemented Spring Security with role-based access control</li>
+            <li>Designed layered REST API architecture</li>
+            <li>Developed Angular dynamic forms with validation</li>
+            <li>Handled centralized exception handling & error responses</li>
+            <li>Structured modular frontend routing for scalability</li>
+          </ul>
+
+          <div class="mt-3">
+            <span class="badge bg-success m-1">Spring Security</span>
+            <span class="badge bg-success m-1">REST API</span>
+            <span class="badge bg-success m-1">Angular Forms</span>
+            <span class="badge bg-success m-1">JWT</span>
+          </div>
+
+          <div class="mt-3">
+            <a href="https://github.com/surendar-dev-tech"
+               target="_blank"
+               class="btn btn-outline-light btn-sm">
+               GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================= -->
+<!-- FULLSCREEN MODAL (Outside Layout) -->
+<!-- ========================= -->
+<div class="image-modal" *ngIf="showImage">
+  <img 
+    src="mysaleza.png"
+    class="modal-image">
+
+  <button class="close-btn" (click)="closeImage()">✖</button>
+</div>

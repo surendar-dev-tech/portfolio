@@ -24,9 +24,13 @@
                 "input": "public"
               }
             ],
+            "scripts": [
+                 "node_modules/aos/dist/aos.js"
+],
             "styles": [
-              "src/styles.css"
-            ]
+                "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "src/styles.css"
+]
           },
           "configurations": {
             "production": {
@@ -88,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e41f35d7-ceb6-4b8e-83e4-265a518b4db8"
   }
 }
