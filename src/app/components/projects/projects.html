@@ -1,106 +1,138 @@
-<section id="projects" class="py-5">
+<section id="projects" class="py-5 mt-5">
   <div class="container">
-    <h2 class="section-title text-center mb-5">Projects</h2>
+    <div class="text-center mb-5">
+      <h2 class="section-title glow-text d-inline-block">Featured Projects</h2>
+    </div>
 
-    <div class="row">
+    <div class="row g-4">
 
       <!-- ========================= -->
       <!-- Project 1 -->
       <!-- ========================= -->
-      <div class="col-12 mb-5" data-aos="fade-up">
-        <div class="card p-4 shadow border-0 bg-dark text-light">
+      <div class="col-md-6" data-aos="fade-up">
+        <div class="glass-card p-4 h-100 d-flex flex-column">
 
-          <div class="row align-items-center">
-
-            <!-- Image Column -->
-            <div class="col-md-6 text-center mb-3 mb-md-0">
-              <img 
-                src="mysaleza.png"
-                alt="MySaleza CRM"
-                class="project-image"
-                (click)="openImage($event)">
-            </div>
-
-            <!-- Content Column -->
-            <div class="col-md-6">
-              <h5 class="fw-bold mb-3">
-                MySaleza — CRM Management System
-              </h5>
-
-              <p>
-                Designed and developed a full-stack CRM platform to manage leads,
-                customers, products, and sales workflows using microservice architecture.
-              </p>
-
-              <ul>
-                <li>20+ REST APIs using Spring Boot</li>
-                <li>JWT authentication & role-based authorization</li>
-                <li>Optimized JPA queries for performance</li>
-                <li>MariaDB relational schema with indexing</li>
-              </ul>
-
-              <div class="mt-3">
-                <span class="badge bg-primary m-1">Spring Boot</span>
-                <span class="badge bg-primary m-1">Angular</span>
-                <span class="badge bg-primary m-1">Microservices</span>
-                <span class="badge bg-primary m-1">JWT</span>
-                <span class="badge bg-primary m-1">MariaDB</span>
-              </div>
-
-              <div class="mt-3">
-                <a href="https://github.com/surendar-dev-tech"
-                   target="_blank"
-                   class="btn btn-outline-light btn-sm">
-                   GitHub
-                </a>
-              </div>
-            </div>
-
+          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
+            <img src="mysaleza.png" alt="MySaleza CRM" class="img-fluid" style="cursor: pointer; object-fit: cover;"
+              (click)="openImage($event, 'mysaleza.png')">
           </div>
+
+          <h5 class="fw-bold mb-3 text-dynamic">
+            MySaleza - CRM Management System
+          </h5>
+
+          <p class="text-muted-custom small mb-4">
+            Built a full-stack CRM platform for leads, customers, products,
+            and sales workflows.
+          </p>
+
+          <ul class="text-muted-custom list-unstyled small mb-4 flex-grow-1">
+            <li class="mb-2">• 20+ REST APIs using Spring Boot</li>
+            <li class="mb-2">• JWT authentication and role-based authorization</li>
+            <li class="mb-2">• Optimized JPA query performance</li>
+            <li class="mb-2">• MariaDB relational schema with indexing</li>
+          </ul>
+
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Spring Boot</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Microservices</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">JWT</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">MariaDB</span>
+          </div>
+
+          <div class="mt-auto">
+            <a href="https://github.com/surendar-dev-tech" target="_blank" class="glass-btn"
+              style="font-size: 0.85rem; padding: 4px 16px;">
+              GitHub
+            </a>
+          </div>
+
         </div>
       </div>
-
 
       <!-- ========================= -->
       <!-- Project 2 -->
       <!-- ========================= -->
-      <div class="col-md-6 mb-4"
-           data-aos="fade-up"
-           data-aos-delay="200">
-        <div class="card p-4 h-100 shadow border-0 bg-dark text-light">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card p-4 h-100 d-flex flex-column">
 
-          <h5 class="fw-bold mb-3">
+          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
+            <img src="Job Transition Assistant.png" alt="Job Transition Assistant" class="img-fluid"
+              style="cursor: pointer; object-fit: cover;" (click)="openImage($event, 'Job Transition Assistant.png')">
+          </div>
+
+          <h5 class="fw-bold mb-3 text-dynamic">
             Job Transition Assistant
           </h5>
 
-          <p>
-            Built a secure web platform to help job seekers track learning progress,
-            manage applications, and monitor career transition activities.
+          <p class="text-muted-custom small mb-4">
+            Built a secure platform to track learning, applications, and
+            career transition activities.
           </p>
 
-          <ul>
-            <li>Implemented Spring Security with role-based access control</li>
-            <li>Designed layered REST API architecture</li>
-            <li>Developed Angular dynamic forms with validation</li>
-            <li>Handled centralized exception handling & error responses</li>
-            <li>Structured modular frontend routing for scalability</li>
+          <ul class="text-muted-custom list-unstyled small mb-4 flex-grow-1">
+            <li class="mb-2">• Spring Security with RBAC</li>
+            <li class="mb-2">• Layered REST API architecture</li>
+            <li class="mb-2">• Dynamic Angular forms and validation</li>
+            <li class="mb-2">• Centralized exception responses</li>
           </ul>
 
-          <div class="mt-3">
-            <span class="badge bg-success m-1">Spring Security</span>
-            <span class="badge bg-success m-1">REST API</span>
-            <span class="badge bg-success m-1">Angular Forms</span>
-            <span class="badge bg-success m-1">JWT</span>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Spring Security</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">REST API</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular Forms</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">JWT</span>
           </div>
 
-          <div class="mt-3">
-            <a href="https://github.com/surendar-dev-tech"
-               target="_blank"
-               class="btn btn-outline-light btn-sm">
-               GitHub
+          <div class="mt-auto">
+            <a href="https://github.com/surendar-dev-tech" target="_blank" class="glass-btn"
+              style="font-size: 0.85rem; padding: 4px 16px;">
+              GitHub
             </a>
           </div>
 
+        </div>
+      </div>
+
+      <!-- ========================= -->
+      <!-- Project 3: Invenza -->
+      <!-- ========================= -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="glass-card p-4 h-100 d-flex flex-column">
+
+          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
+            <img src="myshop.png" alt="Invenza MyShop" class="img-fluid project-thumbnail"
+              style="cursor: pointer; transition: transform 0.5s ease; width: 100%; height: 200px; object-fit: cover;"
+              (click)="openImage($event, 'myshop.png')">
+          </div>
+
+          <h5 class="fw-bold mb-3 text-dynamic">
+            Invenza - Retail Management System
+          </h5>
+
+          <p class="text-muted-custom small flex-grow-1">
+            A comprehensive cloud-based platform for retail businesses to manage sales, inventory, and customer billing.
+            Features a secure multi-tenant architecture and real-time data synchronization.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mb-4 mt-3">
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">TypeScript</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Material UI</span>
+            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Netlify</span>
+          </div>
+
+          <div class="d-flex gap-3">
+            <a href="https://invenza-app.netlify.app/login" target="_blank"
+              class="glass-btn flex-grow-1 py-2 text-center text-decoration-none">
+              Live Demo
+            </a>
+            <a href="https://github.com/surendar-dev-tech" target="_blank"
+              class="glass-btn px-4 py-2 text-center text-decoration-none">
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
 
@@ -108,14 +140,13 @@
   </div>
 </section>
 
-
 <!-- ========================= -->
 <!-- FULLSCREEN MODAL (Outside Layout) -->
 <!-- ========================= -->
-<div class="image-modal" *ngIf="showImage">
-  <img 
-    src="mysaleza.png"
-    class="modal-image">
+<div class="image-modal" *ngIf="showImage"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+  <img [src]="selectedImage" class="modal-image" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
 
-  <button class="close-btn" (click)="closeImage()">✖</button>
+  <button class="close-btn glass-btn" (click)="closeImage()"
+    style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; padding: 4px 16px;">✖</button>
 </div>

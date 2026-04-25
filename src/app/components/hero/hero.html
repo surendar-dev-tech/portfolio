@@ -1,18 +1,64 @@
-<section class="vh-100 d-flex align-items-center text-center">
+<section class="min-vh-100 d-flex align-items-center pt-5 mt-5">
   <div class="container" @fadeIn>
-    <h1 class="display-4 fw-bold">Hi, I'm Surendar</h1>
-    <p class="lead mt-3">
-      Java Full Stack Developer building scalable microservices
-      & secure REST APIs.
-    </p>
+    <div class="row align-items-center">
 
-    <a href="#projects" class="btn btn-primary m-2">
-      View Projects
-    </a>
+      <!-- Left Content -->
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <div class="mb-4 d-inline-block position-relative profile-img-container">
+          <img src="Surendar.jpg" alt="Surendar" class="rounded-circle shadow-lg"
+            style="width: 180px; height: 180px; object-fit: cover; object-position: center 20%; border: 4px solid var(--accent-color); box-shadow: 0 0 30px var(--glow-color) !important; transition: all 0.3s ease;">
+        </div>
+        <div class="glass-pill mb-4" style="font-size: 0.75rem; letter-spacing: 1px;">
+          {{ currentTitle }}<span class="blinking-cursor">|</span>
+        </div>
 
-    <a href="https://github.com/surendar-dev-tech"
-       class="btn btn-outline-light m-2">
-      GitHub
-    </a>
+        <h1 class="display-4 glow-text lh-sm mb-4">
+          I engineer secure<br>
+          backend systems<br>
+          with premium<br>
+          frontend<br>
+          experiences.
+        </h1>
+
+        <p class="text-muted-custom mb-4 pe-lg-5" style="font-size: 1.1rem; line-height: 1.6;">
+          Angular + Spring Boot portfolio of real products, scalable APIs, and user-focused interfaces designed to ship
+          fast and run reliably.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#projects" class="glass-btn"
+            style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+            View Projects
+          </a>
+          <a href="#contact" class="glass-btn">
+            Hire Me
+          </a>
+          <a href="resume.pdf" class="glass-btn">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Content / Card -->
+      <div class="col-lg-5">
+        <div class="glass-card p-5">
+          <p class="text-muted-custom small fw-bold mb-2" style="letter-spacing: 1px;">NOW BUILDING</p>
+          <h4 class="fw-bold text-dynamic mb-4">Enterprise-ready full stack<br>solutions</h4>
+
+          <ul class="text-muted-custom list-unstyled" style="font-size: 0.95rem; line-height: 1.8;">
+            <li class="mb-3 d-flex align-items-start">
+              <span class="me-2 text-primary">•</span> RESTful systems with role-based access
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <span class="me-2 text-primary">•</span> Microservice architecture and clean APIs
+            </li>
+            <li class="d-flex align-items-start">
+              <span class="me-2 text-primary">•</span> Fast, responsive, animation-rich frontend
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>

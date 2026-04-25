@@ -1,12 +1,16 @@
-<section id="skills" class="py-5 text-center">
+<section id="skills" class="py-5 mt-5 text-center">
   <div class="container">
-    <h2 class="section-title mb-4">Technical Skills</h2>
+    <div class="mb-5">
+      <h2 class="section-title glow-text d-inline-block">Technical Skills</h2>
+    </div>
 
-    <span
-      *ngFor="let skill of skills"
-      class="badge bg-primary m-2 p-2">
-      {{ skill }}
-    </span>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <span
+        *ngFor="let skill of skills"
+        class="glass-btn" style="border-radius: 8px; padding: 12px 24px; font-weight: 500; letter-spacing: 0.5px;">
+        {{ skill }}
+      </span>
+    </div>
 
   </div>
 </section>

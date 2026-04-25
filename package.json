@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^20.3.17",
+    "@emailjs/browser": "^4.3.3",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
