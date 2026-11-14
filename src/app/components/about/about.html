@@ -1,65 +1,203 @@
-<section id="about" class="container py-5 mt-5">
-  <div class="text-center mb-5">
-    <h2 class="section-title glow-text d-inline-block">About Me</h2>
-  </div>
-
-  <!-- Top 3 Cards Grid -->
-  <div class="row g-4 mb-5">
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-      <div class="glass-card p-4 h-100">
-        <h5 class="fw-bold mb-3">Who I Am</h5>
-        <p class="text-muted-custom small mb-0">
-          Full stack developer focused on building secure, scalable software with clean architecture and smooth user experience.
-        </p>
+<section id="about" class="about-bento-section py-5">
+  <div class="container py-4">
+    <!-- Section Heading -->
+    <div class="mb-5 text-start" data-aos="fade-up">
+      <div class="section-tag">
+        <span>CORE CAPABILITIES</span>
       </div>
+      <h2 class="section-headline">Architected for Speed &amp; Scale.</h2>
+      <p class="section-subtext">
+        Every layer is decoupled, strictly validated, and optimized for low-latency production execution.
+      </p>
     </div>
 
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-      <div class="glass-card p-4 h-100">
-        <h5 class="fw-bold mb-3">What I Work With</h5>
-        <p class="text-muted-custom small mb-0">
-          Angular, TypeScript, Java, Spring Boot, JWT auth, relational data modeling, and API-first microservice systems.
-        </p>
-      </div>
-    </div>
+    <!-- Asymmetric 12-Column Bento Grid -->
+    <div class="row g-4">
 
-    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-      <div class="glass-card p-4 h-100">
-        <h5 class="fw-bold mb-3">What I Value</h5>
-        <p class="text-muted-custom small mb-0">
-          Performance, maintainability, and practical design that helps users complete tasks faster and better.
-        </p>
-      </div>
-    </div>
-  </div>
+      <!-- Card 1 (7 cols): Backend & Microservices Engineering -->
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+        <div class="bento-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="mono-pill emerald">01. BACKEND ARCHITECTURE</span>
+              <span class="small mono-font text-muted">Spring Boot 3 &bull; Java 17/21</span>
+            </div>
 
-  <!-- Stacked Timeline -->
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      
-      <div class="position-relative ps-4 mb-4" data-aos="fade-up">
-        <div class="position-absolute top-0 start-0 h-100 border-start border-2 border-secondary opacity-25 ms-1"></div>
-        <div class="position-absolute top-50 start-0 translate-middle rounded-circle bg-light" style="width: 8px; height: 8px; margin-left: 2px;"></div>
-        <div class="glass-card p-4">
-          <h6 class="fw-bold mb-2">Foundation</h6>
-          <p class="text-muted-custom small mb-0">Built strong backend fundamentals with Java, Spring Boot, and REST API design.</p>
+            <h3 class="bento-card-title mb-2">Resilient REST Microservices</h3>
+            <p class="bento-card-desc mb-4">
+              Decoupled Controller, Service, and Repository layers with Spring Security, stateless JWT authentication, and granular RBAC.
+            </p>
+
+            <!-- Visual API Preview -->
+            <div class="api-preview-panel p-3 rounded-2 mono-font mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="method-tag post">POST</span>
+                  <span class="endpoint-path text-ink">/api/v1/auth/login</span>
+                </div>
+                <span class="status-code-tag">200 OK &bull; 28ms</span>
+              </div>
+              <div class="response-snippet">
+                <span class="c-prop">&#123; "status":</span> <span class="c-str">"AUTHENTICATED"</span>, 
+                <span class="c-prop">"role":</span> <span class="c-str">"ADMIN"</span>, 
+                <span class="c-prop">"valid":</span> <span class="c-type">true</span> &#125;
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Tech Tags -->
+          <div class="d-flex flex-wrap gap-2 pt-3 border-top">
+            <span class="mono-pill">Spring Boot 3</span>
+            <span class="mono-pill">Spring Security</span>
+            <span class="mono-pill">JWT</span>
+            <span class="mono-pill">REST APIs</span>
+            <span class="mono-pill">RBAC</span>
+          </div>
         </div>
       </div>
 
-      <div class="position-relative ps-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="position-absolute top-0 start-0 h-100 border-start border-2 border-secondary opacity-25 ms-1"></div>
-        <div class="position-absolute top-50 start-0 translate-middle rounded-circle bg-light" style="width: 8px; height: 8px; margin-left: 2px;"></div>
-        <div class="glass-card p-4">
-          <h6 class="fw-bold mb-2">Full Stack Delivery</h6>
-          <p class="text-muted-custom small mb-0">Integrated Angular UI with secure APIs, role-based auth, and scalable database models.</p>
+      <!-- Card 2 (5 cols): Frontend Architecture -->
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="150">
+        <div class="bento-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="mono-pill">02. FRONTEND SPA</span>
+              <span class="small mono-font text-muted">Angular 20 &bull; TypeScript</span>
+            </div>
+
+            <h3 class="bento-card-title mb-2">Modern Reactive Interfaces</h3>
+            <p class="bento-card-desc mb-4">
+              Modular Angular components with reactive forms, clean SCSS design tokens, and smooth mobile-first performance.
+            </p>
+
+            <!-- Mini Interactive UI Preview -->
+            <div class="mini-ui-preview p-3 rounded-2 mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="small mono-font text-ink fw-semibold">Interactive Filter State</span>
+                <span class="pulse-dot"></span>
+              </div>
+              <div class="d-flex gap-1 mb-2">
+                <button 
+                  class="mini-tab-btn" 
+                  [class.active]="previewActiveFilter === 'all'" 
+                  (click)="setPreviewFilter('all')">
+                  All
+                </button>
+                <button 
+                  class="mini-tab-btn" 
+                  [class.active]="previewActiveFilter === 'active'" 
+                  (click)="setPreviewFilter('active')">
+                  Active (18)
+                </button>
+                <button 
+                  class="mini-tab-btn" 
+                  [class.active]="previewActiveFilter === 'archived'" 
+                  (click)="setPreviewFilter('archived')">
+                  Archived (6)
+                </button>
+              </div>
+              <div class="small mono-font text-muted">
+                State: <span class="text-emerald fw-semibold">&#64;Input() {{ previewActiveFilter | uppercase }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Tech Tags -->
+          <div class="d-flex flex-wrap gap-2 pt-3 border-top">
+            <span class="mono-pill">Angular 20</span>
+            <span class="mono-pill">TypeScript</span>
+            <span class="mono-pill">Reactive Forms</span>
+            <span class="mono-pill">SCSS</span>
+          </div>
         </div>
       </div>
 
-      <div class="position-relative ps-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="position-absolute top-50 start-0 translate-middle rounded-circle bg-light" style="width: 8px; height: 8px; margin-left: 2px;"></div>
-        <div class="glass-card p-4">
-          <h6 class="fw-bold mb-2">Optimization Mindset</h6>
-          <p class="text-muted-custom small mb-0">Focused on performance tuning, reusable architecture, and smooth user experiences.</p>
+      <!-- Card 3 (5 cols): Database & Performance -->
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="bento-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="mono-pill amber">03. DATA TIER</span>
+              <span class="small mono-font text-muted">MariaDB &bull; MySQL</span>
+            </div>
+
+            <h3 class="bento-card-title mb-2">Optimized Relational Storage</h3>
+            <p class="bento-card-desc mb-4">
+              Normalized schemas with composite indexes, foreign key integrity, and tuned JPA/Hibernate batch fetching.
+            </p>
+
+            <!-- Query Metrics Box -->
+            <div class="db-metric-panel p-3 rounded-2 mono-font mb-4">
+              <div class="d-flex justify-content-between text-body small mb-1">
+                <span class="fw-semibold">INDEXED QUERY EXECUTION</span>
+                <span class="text-emerald fw-bold">P99: 14ms</span>
+              </div>
+              <div class="progress-bar-wrap mb-2">
+                <div class="progress-fill" style="width: 94%;"></div>
+              </div>
+              <div class="small text-muted">
+                HikariCP: 10/10 Active &bull; ACID Guarantees
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Tech Tags -->
+          <div class="d-flex flex-wrap gap-2 pt-3 border-top">
+            <span class="mono-pill">MariaDB</span>
+            <span class="mono-pill">MySQL</span>
+            <span class="mono-pill">JPA/Hibernate</span>
+            <span class="mono-pill">SQL Tuning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 (7 cols): DevOps & Production Infrastructure -->
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="250">
+        <div class="bento-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="mono-pill emerald">04. DEVOPS &amp; VPS</span>
+              <span class="small mono-font text-muted">Docker &bull; Linux VPS</span>
+            </div>
+
+            <h3 class="bento-card-title mb-2">Containerized Deployments</h3>
+            <p class="bento-card-desc mb-4">
+              Multi-stage Docker builds, isolated internal container networks, Nginx reverse proxy with SSL termination, and Ubuntu VPS ops.
+            </p>
+
+            <!-- VPS Pipeline -->
+            <div class="vps-pipeline-panel p-3 rounded-2 mono-font mb-4">
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <div class="pipeline-step">
+                  <span class="step-num text-muted">01.</span>
+                  <span class="text-ink fw-semibold">Git Push</span>
+                </div>
+                <span class="text-muted">&rarr;</span>
+                <div class="pipeline-step">
+                  <span class="step-num text-muted">02.</span>
+                  <span class="text-ink fw-semibold">Docker Build</span>
+                </div>
+                <span class="text-muted">&rarr;</span>
+                <div class="pipeline-step">
+                  <span class="step-num text-muted">03.</span>
+                  <span class="text-ink fw-semibold">Nginx SSL</span>
+                </div>
+                <span class="text-muted">&rarr;</span>
+                <div class="pipeline-step live">
+                  <span class="step-num text-emerald fw-bold">LIVE</span>
+                  <span class="text-emerald fw-bold">VPS Host</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Tech Tags -->
+          <div class="d-flex flex-wrap gap-2 pt-3 border-top">
+            <span class="mono-pill">Docker</span>
+            <span class="mono-pill">Linux VPS</span>
+            <span class="mono-pill">Nginx Proxy</span>
+            <span class="mono-pill">SSL / TLS</span>
+          </div>
         </div>
       </div>
 

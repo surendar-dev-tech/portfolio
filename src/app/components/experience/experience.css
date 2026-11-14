@@ -1,0 +1,137 @@
+.apple-experience-section {
+  position: relative;
+  background-color: #0E1116 !important;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #262D36 !important;
+}
+
+.max-w-container {
+  max-width: 960px;
+}
+
+/* Timeline Filter Tabs */
+.timeline-filter-tabs {
+  background: #161B22 !important;
+  border: 1px solid #262D36 !important;
+  border-radius: 9999px;
+}
+
+.timeline-tab-pill {
+  background: transparent !important;
+  border: none !important;
+  font-family: var(--display-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9BA7B4 !important;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeline-tab-pill:hover {
+  color: #E6EDF3 !important;
+}
+
+.timeline-tab-pill.active {
+  background: #4FD1C5 !important;
+  color: #0E1116 !important;
+  font-weight: 600;
+}
+
+/* Timeline Card with 3px Accent Left Border */
+.timeline-card {
+  border-left: 3px solid #4FD1C5 !important;
+  background: #161B22 !important;
+  border-radius: 12px;
+  border: 1px solid #262D36 !important;
+}
+
+.timeline-period-badge {
+  font-family: var(--code-font);
+  font-size: 0.82rem;
+  color: #9BA7B4 !important;
+  font-weight: 500;
+}
+
+.role-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #E6EDF3 !important;
+  letter-spacing: -0.025em;
+}
+
+.org-name {
+  font-size: 1.05rem;
+  color: #4FD1C5 !important;
+  font-weight: 700;
+}
+
+.location-text {
+  font-size: 0.88rem;
+  color: #9BA7B4 !important;
+}
+
+.timeline-summary-text {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #9BA7B4 !important;
+}
+
+/* Metric Mini Card */
+.metric-mini-card {
+  background: #1F2630 !important;
+  border: 1px solid #262D36 !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.metric-mini-card:hover {
+  border-color: #3A4450 !important;
+  transform: translateY(-2px);
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  color: #4FD1C5 !important;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #9BA7B4 !important;
+}
+
+/* Expand Animation */
+.timeline-expanded-content {
+  animation: expandFadeIn 0.2s ease-out;
+}
+
+@keyframes expandFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.check-icon {
+  color: #4FD1C5 !important;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.timeline-bullet-text {
+  font-size: 0.95rem;
+  color: #9BA7B4 !important;
+  line-height: 1.55;
+}
+
+.text-teal {
+  color: #4FD1C5 !important;
+}
+
+.border-subtle {
+  border-color: #262D36 !important;
+}

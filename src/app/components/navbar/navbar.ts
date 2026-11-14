@@ -9,19 +9,19 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.css'],
 })
 export class Navbar {
-  isLightMode = false;
   activeSection = '';
+  isMobileMenuOpen = false;
 
   @HostListener('window:scroll')
   onScroll() {
-    const sections = ['about', 'projects', 'skills', 'contact'];
+    const sections = ['projects', 'skills', 'experience', 'contact'];
     let current = '';
 
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
         const rect = element.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) {
+        if (rect.top <= 250 && rect.bottom >= 100) {
           current = section;
           break;
         }
@@ -33,12 +33,11 @@ export class Navbar {
     }
   }
 
-  toggleTheme() {
-    this.isLightMode = !this.isLightMode;
-    if (this.isLightMode) {
-      document.body.setAttribute('data-theme', 'light');
-    } else {
-      document.body.removeAttribute('data-theme');
-    }
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
   }
 }

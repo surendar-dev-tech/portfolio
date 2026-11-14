@@ -1,0 +1,210 @@
+.apple-skills-section {
+  position: relative;
+  background-color: #0E1116 !important;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #262D36 !important;
+}
+
+/* Category Filter Tabs */
+.skills-filter-tabs {
+  background: #161B22 !important;
+  border: 1px solid #262D36 !important;
+  border-radius: 9999px;
+}
+
+.skills-tab-pill {
+  background: transparent !important;
+  border: none !important;
+  font-family: var(--display-font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9BA7B4 !important;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skills-tab-pill:hover {
+  color: #E6EDF3 !important;
+}
+
+.skills-tab-pill.active {
+  background: #4FD1C5 !important;
+  color: #0E1116 !important;
+  font-weight: 600;
+}
+
+/* Search Wrapper */
+.skills-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.skills-search-input {
+  width: 100%;
+  background: #1F2630 !important;
+  border: 1px solid #262D36 !important;
+  border-radius: 9999px;
+  padding: 10px 40px 10px 42px;
+  font-size: 0.88rem;
+  color: #E6EDF3 !important;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.skills-search-input:focus {
+  border-color: #4FD1C5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.2) !important;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9BA7B4 !important;
+  pointer-events: none;
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #9BA7B4 !important;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.category-index-badge {
+  font-family: var(--code-font);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4FD1C5 !important;
+  background: rgba(79, 209, 197, 0.1) !important;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(79, 209, 197, 0.2) !important;
+}
+
+.category-card-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #E6EDF3 !important;
+  letter-spacing: -0.025em;
+}
+
+.category-subtext {
+  font-size: 0.95rem;
+  color: #9BA7B4 !important;
+}
+
+/* Clickable Skill Chip (Dark Rounded Pill Chips with #161B22 background) */
+.skill-item-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #161B22 !important;
+  border: 1px solid #262D36 !important;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.skill-item-chip:hover {
+  background: #1F2630 !important;
+  border-color: #4FD1C5 !important;
+  transform: translateY(-1px);
+}
+
+.skill-item-chip.active {
+  background: #1F2630 !important;
+  border-color: #4FD1C5 !important;
+}
+
+.chip-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #E6EDF3 !important;
+}
+
+.chip-category-label {
+  font-size: 0.72rem;
+  color: #9BA7B4 !important;
+  font-family: var(--code-font);
+}
+
+/* Modal Overlay & Card */
+.apple-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.apple-modal-card {
+  max-width: 640px;
+  width: 100%;
+  background: #161B22 !important;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid #262D36 !important;
+  animation: slideUpModal 0.2s ease;
+}
+
+@keyframes slideUpModal {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close-icon {
+  background: #1F2630 !important;
+  border: 1px solid #262D36 !important;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #E6EDF3 !important;
+  transition: all 0.15s ease;
+}
+
+.modal-close-icon:hover {
+  border-color: #4FD1C5 !important;
+  color: #4FD1C5 !important;
+}
+
+.text-teal {
+  color: #4FD1C5 !important;
+}
+
+.border-teal-subtle {
+  border-color: rgba(79, 209, 197, 0.3) !important;
+}

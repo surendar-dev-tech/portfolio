@@ -1,0 +1,67 @@
+.apple-footer {
+  background: #0E1116 !important;
+  border-top: 1px solid #262D36 !important;
+  position: relative;
+  z-index: 10;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.brand-monogram {
+  font-family: var(--code-font);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0E1116 !important;
+  background: #4FD1C5 !important;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+}
+
+.brand-dot {
+  color: #4FD1C5 !important;
+  font-weight: 800;
+}
+
+.footer-link {
+  color: #9BA7B4 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.footer-link:hover {
+  color: #4FD1C5 !important;
+}
+
+.footer-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #1F2630 !important;
+  border: 1px solid #262D36 !important;
+  color: #E6EDF3 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.footer-icon-btn:hover {
+  background: #161B22 !important;
+  border-color: #4FD1C5 !important;
+  color: #4FD1C5 !important;
+  transform: translateY(-1px);
+}
+
+.border-subtle {
+  border-color: #262D36 !important;
+}
