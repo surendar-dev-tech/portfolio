@@ -1,152 +1,274 @@
-<section id="projects" class="py-5 mt-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title glow-text d-inline-block">Featured Projects</h2>
+<section id="projects" class="projects-section py-5">
+  <div class="container py-4">
+    <!-- Section Header -->
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">Featured Work</span>
+      <h2 class="section-headline">Apps Built for Real Impact.</h2>
+      <p class="section-subtext">
+        Production systems with clean microservice architectures, enterprise database schemas, and modern responsive frontends.
+      </p>
+
+      <!-- Search & Category Filter Controls -->
+      <div class="d-flex flex-column align-items-center gap-3">
+        <!-- Interactive Category Filter Tabs -->
+        <div class="filter-tabs-wrapper d-inline-flex flex-wrap justify-content-center gap-2 p-1">
+          <button 
+            class="filter-tab-pill" 
+            [class.active]="selectedCategory === 'all'" 
+            (click)="setCategory('all')">
+            All Projects ({{ projects.length }})
+          </button>
+          <button 
+            class="filter-tab-pill" 
+            [class.active]="selectedCategory === 'fullstack'" 
+            (click)="setCategory('fullstack')">
+            Full-Stack (2)
+          </button>
+          <button 
+            class="filter-tab-pill" 
+            [class.active]="selectedCategory === 'enterprise'" 
+            (click)="setCategory('enterprise')">
+            Enterprise CRM (1)
+          </button>
+          <button 
+            class="filter-tab-pill" 
+            [class.active]="selectedCategory === 'microservices'" 
+            (click)="setCategory('microservices')">
+            Microservices &amp; VPS (1)
+          </button>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="project-search-bar-wrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            [(ngModel)]="searchQuery" 
+            placeholder="Search by tech or keyword (e.g. Spring, Angular, RabbitMQ, Docker)..." 
+            class="project-search-input">
+          <button *ngIf="searchQuery" (click)="searchQuery = ''" class="clear-search-btn">&times;</button>
+        </div>
+      </div>
     </div>
 
-    <div class="row g-4">
+    <!-- Empty State if search yields no results -->
+    <div *ngIf="filteredProjects.length === 0" class="text-center py-5">
+      <div class="p-4 rounded-3 border d-inline-block" style="background: var(--card-surface);">
+        <p class="mb-2 fw-bold" style="color: var(--text-primary);">No matching projects found for "{{ searchQuery }}"</p>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3" (click)="searchQuery = ''; selectedCategory = 'all'">
+          Reset Filters
+        </button>
+      </div>
+    </div>
 
-      <!-- ========================= -->
-      <!-- Project 1 -->
-      <!-- ========================= -->
-      <div class="col-md-6" data-aos="fade-up">
-        <div class="glass-card p-4 h-100 d-flex flex-column">
+    <!-- Project Cards Stack -->
+    <div class="projects-container d-flex flex-column gap-5">
+      <div 
+        class="apple-card project-card p-4 p-md-5" 
+        *ngFor="let proj of filteredProjects; let i = index" 
+        data-aos="fade-up" 
+        [attr.data-aos-delay]="(i + 1) * 80">
 
-          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
-            <img src="mysaleza.png" alt="MySaleza CRM" class="img-fluid" style="cursor: pointer; object-fit: cover;"
-              (click)="openImage($event, 'mysaleza.png')">
+        <div class="row g-5 align-items-center">
+
+          <!-- Left Column: Info & Interactive Tabs -->
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="apple-pill blue">{{ proj.role }}</span>
+              <span class="apple-pill">{{ proj.categoryLabel }}</span>
+            </div>
+
+            <h3 class="project-title mb-1">{{ proj.title }}</h3>
+            <p class="project-subtitle mb-3">{{ proj.subtitle }}</p>
+
+            <!-- Card-Level Interactive Tabs -->
+            <div class="card-inner-tabs d-inline-flex p-1 rounded-pill mb-3">
+              <button 
+                class="inner-tab-btn" 
+                [class.active]="getProjectTab(proj.id) === 'overview'" 
+                (click)="setProjectTab(proj.id, 'overview')">
+                ✨ Overview
+              </button>
+              <button 
+                class="inner-tab-btn" 
+                [class.active]="getProjectTab(proj.id) === 'architecture'" 
+                (click)="setProjectTab(proj.id, 'architecture')">
+                ⚙ System Architecture
+              </button>
+              <button 
+                class="inner-tab-btn" 
+                [class.active]="getProjectTab(proj.id) === 'endpoints'" 
+                (click)="setProjectTab(proj.id, 'endpoints')">
+                🔌 REST APIs ({{ proj.endpoints.length }})
+              </button>
+            </div>
+
+            <!-- Tab Content 1: Overview -->
+            <div *ngIf="getProjectTab(proj.id) === 'overview'" class="tab-fade-in">
+              <p class="project-summary mb-3">{{ proj.summary }}</p>
+
+              <!-- 3 Clean Checkmark Bullets -->
+              <div class="project-highlights-list mb-4 d-flex flex-column gap-2">
+                <div class="d-flex align-items-start gap-2" *ngFor="let h of proj.highlights">
+                  <span class="check-icon">✓</span>
+                  <span class="highlight-text">{{ h }}</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Pills: Accent text, small mono -->
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="apple-pill tech-pill mono-font" *ngFor="let tag of proj.techStack">{{ tag }}</span>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: Architecture Breakdown -->
+            <div *ngIf="getProjectTab(proj.id) === 'architecture'" class="tab-fade-in mb-4">
+              <div class="p-3 rounded-3 border mb-3" style="background: var(--raised-surface);">
+                <div class="small fw-bold mb-2" style="color: var(--text-primary);">ARCHITECTURAL DESIGN &amp; TIERS:</div>
+                <div *ngFor="let arch of proj.archDetails" class="mb-2 pb-2 border-bottom border-subtle">
+                  <span class="badge me-2" style="background: var(--card-surface); color: var(--apple-blue); border: 1px solid var(--border-subtle);">{{ arch.layer }}</span>
+                  <span class="small" style="color: var(--text-secondary);">{{ arch.detail }}</span>
+                </div>
+              </div>
+              <p class="small mb-3" style="color: var(--text-secondary);">
+                <strong style="color: var(--text-primary);">Key Challenge Solved:</strong> {{ proj.challenges }}
+              </p>
+            </div>
+
+            <!-- Tab Content 3: REST Endpoints Inspector -->
+            <div *ngIf="getProjectTab(proj.id) === 'endpoints'" class="tab-fade-in mb-4">
+              <div class="d-flex flex-column gap-2">
+                <div *ngFor="let ep of proj.endpoints; let epIdx = index" class="p-2 rounded border" style="background: var(--raised-surface);">
+                  <div class="d-flex align-items-center justify-content-between mb-1">
+                    <div>
+                      <span class="badge" [ngClass]="ep.method === 'POST' ? 'bg-primary-subtle text-teal' : 'bg-success-subtle text-teal'">{{ ep.method }}</span>
+                      <span class="font-monospace small fw-bold ms-2" style="color: var(--text-primary);">{{ ep.path }}</span>
+                    </div>
+                    <button 
+                      class="btn btn-sm btn-link p-0 text-decoration-none small text-teal"
+                      (click)="copyCurl(proj.id + '_' + epIdx, ep.method, ep.path)">
+                      {{ copiedCurlMap[proj.id + '_' + epIdx] ? '✓ Copied' : 'Copy cURL' }}
+                    </button>
+                  </div>
+                  <p class="small mb-1" style="color: var(--text-secondary);">{{ ep.desc }}</p>
+                  <pre *ngIf="ep.sampleResponse" class="mb-0 p-2 rounded font-monospace" style="font-size: 0.7rem; max-height: 80px; overflow-y: auto; background: var(--canvas-bg); color: var(--text-primary); border: 1px solid var(--border-subtle);">{{ ep.sampleResponse }}</pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Links -->
+            <div class="d-flex flex-wrap align-items-center gap-3 pt-2">
+              <a [href]="proj.repoUrl" target="_blank" class="apple-btn-primary">
+                <span>Source Code ↗</span>
+              </a>
+
+              <a *ngIf="proj.liveUrl" [href]="proj.liveUrl" target="_blank" class="apple-btn-secondary">
+                <span>Live Demo ↗</span>
+              </a>
+
+              <button class="apple-btn-secondary" (click)="openSpecsModal($event, proj)">
+                <span>Full Specs Modal ⚙</span>
+              </button>
+            </div>
           </div>
 
-          <h5 class="fw-bold mb-3 text-dynamic">
-            MySaleza - CRM Management System
-          </h5>
+          <!-- Right Mockup Column: Apple Browser Window Frame with Click-to-Zoom -->
+          <div class="col-lg-6">
+            <div class="browser-frame" (click)="proj.image ? openLightbox($event, proj.image) : null" [style.cursor]="proj.image ? 'pointer' : 'default'">
+              <!-- Browser Header -->
+              <div class="browser-top-bar">
+                <div class="browser-circle-dots">
+                  <span class="browser-circle-dot red"></span>
+                  <span class="browser-circle-dot yellow"></span>
+                  <span class="browser-circle-dot green"></span>
+                </div>
+                <div class="browser-address">{{ proj.id }}.surendar.dev</div>
+                <span class="zoom-hint d-none d-sm-inline" *ngIf="proj.image">🔍 Click to zoom</span>
+              </div>
 
-          <p class="text-muted-custom small mb-4">
-            Built a full-stack CRM platform for leads, customers, products,
-            and sales workflows.
-          </p>
+              <!-- Browser Image Frame -->
+              <div class="browser-content-area position-relative" *ngIf="proj.image">
+                <img [src]="proj.image" [alt]="proj.title" class="browser-screenshot-img">
+                <div class="hover-zoom-overlay d-flex align-items-center justify-content-center">
+                  <span class="zoom-badge">🔍 Click to Enlarge</span>
+                </div>
+              </div>
 
-          <ul class="text-muted-custom list-unstyled small mb-4 flex-grow-1">
-            <li class="mb-2">• 20+ REST APIs using Spring Boot</li>
-            <li class="mb-2">• JWT authentication and role-based authorization</li>
-            <li class="mb-2">• Optimized JPA query performance</li>
-            <li class="mb-2">• MariaDB relational schema with indexing</li>
-          </ul>
-
-          <div class="d-flex flex-wrap gap-2 mb-4">
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Spring Boot</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Microservices</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">JWT</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">MariaDB</span>
-          </div>
-
-          <div class="mt-auto">
-            <a href="https://github.com/surendar-dev-tech" target="_blank" class="glass-btn"
-              style="font-size: 0.85rem; padding: 4px 16px;">
-              GitHub
-            </a>
+              <!-- Terminal Preview for Pico United -->
+              <div class="pico-terminal-area p-4 mono-font" *ngIf="!proj.image">
+                <div class="d-flex justify-content-between mb-3">
+                  <span class="fw-bold" style="color: var(--text-primary);">Ubuntu Linux VPS &bull; Docker Engine</span>
+                  <span class="badge-running">4 CONTAINERS UP</span>
+                </div>
+                <div class="terminal-box p-3 rounded-2 mb-2">
+                  <div class="terminal-cmd">$ docker compose ps</div>
+                  <div class="terminal-line mt-2">pico-auth-gateway &nbsp;&bull; port 8081 &bull; healthy</div>
+                  <div class="terminal-line">pico-order-service &bull; port 8082 &bull; healthy</div>
+                  <div class="terminal-line">mariadb-cluster &nbsp;&nbsp;&bull; port 3306 &bull; active</div>
+                  <div class="terminal-line">nginx-reverse-proxy &bull; port 443 &bull; SSL/TLS</div>
+                </div>
+                <div class="small mt-2" style="color: var(--text-secondary);">SSL: Let's Encrypt Wildcard &bull; Automated Cron Backups</div>
+              </div>
+            </div>
           </div>
 
         </div>
+
       </div>
+    </div>
 
-      <!-- ========================= -->
-      <!-- Project 2 -->
-      <!-- ========================= -->
-      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="glass-card p-4 h-100 d-flex flex-column">
+  </div>
 
-          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
-            <img src="Job Transition Assistant.png" alt="Job Transition Assistant" class="img-fluid"
-              style="cursor: pointer; object-fit: cover;" (click)="openImage($event, 'Job Transition Assistant.png')">
-          </div>
-
-          <h5 class="fw-bold mb-3 text-dynamic">
-            Job Transition Assistant
-          </h5>
-
-          <p class="text-muted-custom small mb-4">
-            Built a secure platform to track learning, applications, and
-            career transition activities.
-          </p>
-
-          <ul class="text-muted-custom list-unstyled small mb-4 flex-grow-1">
-            <li class="mb-2">• Spring Security with RBAC</li>
-            <li class="mb-2">• Layered REST API architecture</li>
-            <li class="mb-2">• Dynamic Angular forms and validation</li>
-            <li class="mb-2">• Centralized exception responses</li>
-          </ul>
-
-          <div class="d-flex flex-wrap gap-2 mb-4">
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Spring Security</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">REST API</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular Forms</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">JWT</span>
-          </div>
-
-          <div class="mt-auto">
-            <a href="https://github.com/surendar-dev-tech" target="_blank" class="glass-btn"
-              style="font-size: 0.85rem; padding: 4px 16px;">
-              GitHub
-            </a>
-          </div>
-
+  <!-- Interactive Architecture Specs Modal -->
+  <div class="apple-modal-overlay" *ngIf="activeProjectModal" (click)="closeSpecsModal()">
+    <div class="apple-modal-card p-4 p-md-5" (click)="$event.stopPropagation()">
+      <div class="d-flex align-items-start justify-content-between mb-4 pb-3 border-bottom border-subtle">
+        <div>
+          <span class="apple-pill blue mb-2 d-inline-block">{{ activeProjectModal.categoryLabel }}</span>
+          <h2 class="h3 fw-bold mb-1" style="color: var(--text-primary);">{{ activeProjectModal.title }}</h2>
+          <p class="small mb-0" style="color: var(--text-secondary);">{{ activeProjectModal.architecture }}</p>
         </div>
+        <button class="modal-close-icon" (click)="closeSpecsModal()">&times;</button>
       </div>
 
-      <!-- ========================= -->
-      <!-- Project 3: Invenza -->
-      <!-- ========================= -->
-      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="glass-card p-4 h-100 d-flex flex-column">
-
-          <div class="text-center mb-4 rounded overflow-hidden" style="border: 1px solid rgba(255,255,255,0.1);">
-            <img src="myshop.png" alt="Invenza MyShop" class="img-fluid project-thumbnail"
-              style="cursor: pointer; transition: transform 0.5s ease; width: 100%; height: 200px; object-fit: cover;"
-              (click)="openImage($event, 'myshop.png')">
-          </div>
-
-          <h5 class="fw-bold mb-3 text-dynamic">
-            Invenza - Retail Management System
-          </h5>
-
-          <p class="text-muted-custom small flex-grow-1">
-            A comprehensive cloud-based platform for retail businesses to manage sales, inventory, and customer billing.
-            Features a secure multi-tenant architecture and real-time data synchronization.
-          </p>
-
-          <div class="d-flex flex-wrap gap-2 mb-4 mt-3">
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Angular</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">TypeScript</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Material UI</span>
-            <span class="glass-pill px-3 py-2" style="font-size: 0.85rem;">Netlify</span>
-          </div>
-
-          <div class="d-flex gap-3">
-            <a href="https://invenza-app.netlify.app/home" target="_blank"
-              class="glass-btn flex-grow-1 py-2 text-center text-decoration-none">
-              Live Demo
-            </a>
-            <a href="https://github.com/surendar-dev-tech" target="_blank"
-              class="glass-btn px-4 py-2 text-center text-decoration-none">
-              GitHub
-            </a>
+      <!-- Endpoints List -->
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2" style="font-size: 1rem; color: var(--text-primary);">RESTful API Endpoints &amp; Contracts</h5>
+        <div class="modal-code-box p-3 rounded-2 mono-font">
+          <div class="mb-2" *ngFor="let ep of activeProjectModal.endpoints">
+            <span class="text-teal fw-bold">&gt;</span> <strong style="color: var(--text-primary);">{{ ep.method }}</strong> {{ ep.path }} &mdash; <span style="color: var(--text-secondary);">{{ ep.desc }}</span>
           </div>
         </div>
       </div>
 
+      <!-- Challenges Solved -->
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2" style="font-size: 1rem; color: var(--text-primary);">Engineering Challenges Solved</h5>
+        <p class="small mb-0" style="line-height: 1.6; color: var(--text-secondary);">
+          {{ activeProjectModal.challenges }}
+        </p>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="d-flex justify-content-end gap-2 pt-3 border-top border-subtle">
+        <a [href]="activeProjectModal.repoUrl" target="_blank" class="apple-btn-secondary py-2 px-3">
+          View on GitHub ↗
+        </a>
+        <button class="apple-btn-primary py-2 px-4" (click)="closeSpecsModal()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div class="apple-modal-overlay lightbox-overlay" *ngIf="activeLightboxImg" (click)="closeLightbox()">
+    <div class="lightbox-wrapper position-relative" (click)="$event.stopPropagation()">
+      <button class="lightbox-close-btn" (click)="closeLightbox()">&times;</button>
+      <img [src]="activeLightboxImg" alt="Enlarged screenshot" class="img-fluid rounded-3 shadow-lg lightbox-display-img">
     </div>
   </div>
 </section>
-
-<!-- ========================= -->
-<!-- FULLSCREEN MODAL (Outside Layout) -->
-<!-- ========================= -->
-<div class="image-modal" *ngIf="showImage"
-  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center;">
-  <img [src]="selectedImage" class="modal-image" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
-
-  <button class="close-btn glass-btn" (click)="closeImage()"
-    style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; padding: 4px 16px;">✖</button>
-</div>

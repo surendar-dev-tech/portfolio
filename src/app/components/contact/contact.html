@@ -1,95 +1,194 @@
-<section id="contact" class="py-5 mt-5 mb-5 text-center" style="padding-bottom: 80px !important;">
-  <div class="container">
-    <div class="mb-5">
-      <h2 class="section-title glow-text d-inline-block">Let's Build Something</h2>
-      <p class="text-muted-custom">Have a project in mind or just want to say hi? Drop a message!</p>
+<section id="contact" class="apple-contact-section py-5">
+  <div class="container py-4">
+    <!-- Section Header -->
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-headline">Let's Build Something Together.</h2>
+      <p class="section-subtext">
+        Whether you have a full-stack opportunity, microservices project, or want to connect &mdash; reach out anytime.
+      </p>
     </div>
 
-    <div class="row g-4 justify-content-center text-start">
-      
-      <!-- Contact Info -->
+    <div class="row g-4 justify-content-center">
+      <!-- Left Column: Direct Channels -->
       <div class="col-lg-5" data-aos="fade-right">
-        <div class="glass-card p-5 h-100 d-flex flex-column justify-content-center">
-          <h4 class="fw-bold mb-4">Contact Information</h4>
-          
-          <div class="d-flex align-items-center mb-4">
-            <div class="glass-btn me-3 px-3 py-2" style="cursor: default;">📞</div>
-            <div>
-              <p class="mb-0 text-muted-custom small">Phone</p>
-              <p class="mb-0 fw-bold">9345297009</p>
+        <div class="apple-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <span class="apple-pill green">● Direct Channels</span>
+              <span class="small mono-font text-secondary">&lt; 24h Response</span>
+            </div>
+
+            <p class="mb-4" style="color: var(--text-secondary); font-size: 1.05rem;">
+              Reach out directly through email, phone, or professional networks:
+            </p>
+
+            <!-- Channel 1: Email with 1-click copy -->
+            <div class="contact-channel-row p-3 mb-3 d-flex align-items-center justify-content-between">
+              <div>
+                <span class="d-block small text-secondary fw-semibold mb-1">EMAIL</span>
+                <span class="d-block fw-bold" style="color: var(--text-primary); font-size: 0.95rem;">kannansurendar70&#64;gmail.com</span>
+              </div>
+              <button class="apple-btn-secondary py-1 px-3" style="font-size: 0.8rem;" (click)="copyEmail()">
+                {{ isEmailCopied ? 'Copied!' : 'Copy' }}
+              </button>
+            </div>
+
+            <!-- Channel 2: Phone with 1-click copy & Call -->
+            <div class="contact-channel-row p-3 mb-3 d-flex align-items-center justify-content-between">
+              <div>
+                <span class="d-block small text-secondary fw-semibold mb-1">PHONE</span>
+                <span class="d-block fw-bold" style="color: var(--text-primary); font-size: 0.95rem;">+91 9345297009</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button class="apple-btn-secondary py-1 px-2" style="font-size: 0.8rem;" (click)="copyPhone()">
+                  {{ isPhoneCopied ? 'Copied!' : 'Copy' }}
+                </button>
+                <a href="tel:+919345297009" class="apple-link-btn" style="font-size: 0.85rem;">Call ↗</a>
+              </div>
+            </div>
+
+            <!-- Channel 3: LinkedIn -->
+            <div class="contact-channel-row p-3 mb-3 d-flex align-items-center justify-content-between">
+              <div>
+                <span class="d-block small text-secondary fw-semibold mb-1">LINKEDIN</span>
+                <span class="d-block fw-bold" style="color: var(--text-primary); font-size: 0.95rem;">surendar-kannan</span>
+              </div>
+              <a [href]="linkedinUrl" target="_blank" class="apple-link-btn" style="font-size: 0.85rem;">Profile ↗</a>
+            </div>
+
+            <!-- Channel 4: GitHub -->
+            <div class="contact-channel-row p-3 d-flex align-items-center justify-content-between">
+              <div>
+                <span class="d-block small text-secondary fw-semibold mb-1">GITHUB</span>
+                <span class="d-block fw-bold" style="color: var(--text-primary); font-size: 0.95rem;">surendar-dev-tech</span>
+              </div>
+              <a [href]="githubUrl" target="_blank" class="apple-link-btn" style="font-size: 0.85rem;">Repos ↗</a>
             </div>
           </div>
 
-          <div class="d-flex align-items-center mb-4">
-            <div class="glass-btn me-3 px-3 py-2" style="cursor: default;">✉️</div>
-            <div>
-              <p class="mb-0 text-muted-custom small">Email</p>
-              <p class="mb-0 fw-bold">kannansurendar70@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="d-flex align-items-center mb-4">
-            <div class="glass-btn me-3 px-3 py-2" style="cursor: default;">🔗</div>
-            <div>
-              <p class="mb-0 text-muted-custom small">LinkedIn</p>
-              <a href="https://linkedin.com/in/surendar-kannan-844171376" target="_blank" class="text-dynamic text-decoration-none fw-bold">surendar-kannan</a>
-            </div>
-          </div>
-
-          <div class="d-flex align-items-center">
-            <div class="glass-btn me-3 px-3 py-2" style="cursor: default;">💻</div>
-            <div>
-              <p class="mb-0 text-muted-custom small">GitHub</p>
-              <a href="https://github.com/surendar-dev-tech" target="_blank" class="text-dynamic text-decoration-none fw-bold">surendar-dev-tech</a>
-            </div>
+          <!-- Bottom Location Tag -->
+          <div class="pt-4 mt-3 border-top border-subtle small" style="color: var(--text-secondary);">
+            Location: Chennai, Tamil Nadu, IN &bull; Remote &amp; Hybrid Available
           </div>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-        <div class="glass-card p-5 h-100">
-          
-          <!-- Success Message -->
-          <div *ngIf="successMessage" class="alert alert-success glass-card border-success text-success mb-4" role="alert">
+      <!-- Right Column: Clean Dark Form with Quick Starters -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+        <div class="apple-card p-4 p-md-5 h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h3 class="mb-0" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">Send a Direct Message</h3>
+            <span class="badge border" style="background: var(--raised-surface); color: var(--text-secondary);">Interactive Form</span>
+          </div>
+          <p class="mb-3" style="color: var(--text-secondary);">
+            Leave a note below and I will get back to you promptly:
+          </p>
+
+          <!-- Quick Template Starters -->
+          <div class="mb-4 p-3 rounded-3 border" style="background: var(--raised-surface);">
+            <span class="small fw-semibold d-block mb-2" style="color: var(--text-secondary);">QUICK CONVERSATION STARTERS (CLICK TO POPULATE):</span>
+            <div class="d-flex flex-wrap gap-2">
+              <button 
+                type="button" 
+                class="quick-starter-btn" 
+                (click)="applyTemplate('job')">
+                💼 Hiring / Role
+              </button>
+              <button 
+                type="button" 
+                class="quick-starter-btn" 
+                (click)="applyTemplate('consulting')">
+                ⚡ Architecture Project
+              </button>
+              <button 
+                type="button" 
+                class="quick-starter-btn" 
+                (click)="applyTemplate('chat')">
+                ☕ Tech Chat
+              </button>
+            </div>
+          </div>
+
+          <!-- Status Alerts -->
+          <div *ngIf="successMessage" class="alert alert-success border mb-4" role="alert">
             {{ successMessage }}
           </div>
 
-          <!-- Error Message -->
-          <div *ngIf="errorMessage" class="alert alert-danger glass-card border-danger text-danger mb-4" role="alert">
+          <div *ngIf="errorMessage" class="alert alert-warning border mb-4" role="alert">
             {{ errorMessage }}
           </div>
 
-          <form (ngSubmit)="sendEmail($event)" #contactForm="ngForm">
+          <form (submit)="sendEmail($event)">
             <div class="row g-3">
               <div class="col-md-6">
-                <label class="form-label text-muted-custom small mb-1">Your Name</label>
-                <input type="text" name="from_name" class="glass-input" placeholder="John Doe" required>
+                <label class="form-label small fw-bold" style="color: var(--text-primary);">NAME *</label>
+                <input 
+                  type="text" 
+                  name="user_name" 
+                  [(ngModel)]="formData.user_name"
+                  required 
+                  placeholder="e.g. Alex Johnson" 
+                  class="apple-input">
               </div>
-              
+
               <div class="col-md-6">
-                <label class="form-label text-muted-custom small mb-1">Your Email</label>
-                <input type="email" name="from_email" class="glass-input" placeholder="john@example.com" required>
+                <label class="form-label small fw-bold" style="color: var(--text-primary);">EMAIL ADDRESS *</label>
+                <input 
+                  type="email" 
+                  name="user_email" 
+                  [(ngModel)]="formData.user_email"
+                  required 
+                  placeholder="alex&#64;company.com" 
+                  class="apple-input">
               </div>
 
               <div class="col-12">
-                <label class="form-label text-muted-custom small mb-1">Message</label>
-                <textarea name="message" class="glass-input" rows="5" placeholder="How can I help you?" required></textarea>
+                <label class="form-label small fw-bold" style="color: var(--text-primary);">SUBJECT</label>
+                <input 
+                  type="text" 
+                  name="subject" 
+                  [(ngModel)]="formData.subject"
+                  placeholder="Full-Stack Opportunity / Microservices Architecture" 
+                  class="apple-input">
               </div>
 
-              <div class="col-12 mt-4">
-                <button type="submit" class="glass-btn w-100 py-3 fw-bold d-flex justify-content-center align-items-center" [disabled]="isLoading">
-                  <span *ngIf="!isLoading">Send Message</span>
-                  <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                  <span *ngIf="isLoading">Sending...</span>
+              <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <label class="form-label small fw-bold mb-0" style="color: var(--text-primary);">MESSAGE *</label>
+                  <span class="small font-monospace" style="font-size: 0.72rem; color: var(--text-secondary);">{{ formData.message.length }} chars</span>
+                </div>
+                <textarea 
+                  name="message" 
+                  [(ngModel)]="formData.message"
+                  rows="5" 
+                  required 
+                  placeholder="Describe the opportunity, engineering requirements, or timeline..." 
+                  class="apple-input"></textarea>
+              </div>
+
+              <div class="col-12 pt-2">
+                <button 
+                  type="submit" 
+                  [disabled]="isLoading" 
+                  class="apple-btn-primary w-100 justify-content-center py-3">
+                  <span *ngIf="!isLoading">Send Message &rarr;</span>
+                  <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status"></span>
+                  <span *ngIf="isLoading">Transmitting Message...</span>
                 </button>
               </div>
             </div>
           </form>
-
         </div>
       </div>
-
     </div>
+  </div>
+
+  <!-- Toast Notice on Copy -->
+  <div class="toast-notice" *ngIf="isEmailCopied || isPhoneCopied">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>{{ isEmailCopied ? 'Email copied: kannansurendar70@gmail.com' : 'Phone copied: +91 9345297009' }}</span>
   </div>
 </section>

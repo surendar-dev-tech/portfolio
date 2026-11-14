@@ -1,0 +1,136 @@
+.about-bento-section {
+  position: relative;
+}
+
+.bento-card-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-ink);
+  letter-spacing: -0.025em;
+}
+
+.bento-card-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--text-body);
+}
+
+/* API Preview Sub-Card */
+.api-preview-panel {
+  background: var(--card-subtle);
+  border: 1px solid #CBD5E1;
+  font-size: 0.8rem;
+}
+
+.method-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.method-tag.post {
+  background: var(--mint-bg);
+  color: var(--mint-text);
+  border: 1px solid var(--mint-border);
+}
+
+.endpoint-path {
+  font-weight: 600;
+}
+
+.status-code-tag {
+  color: var(--accent-emerald-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.response-snippet {
+  font-size: 0.75rem;
+  color: #334155;
+  background: #FFFFFF;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.c-prop { color: #0F172A; font-weight: 500; }
+.c-str { color: #0D9488; }
+.c-type { color: #BE185D; }
+
+/* Mini UI Preview in Card 2 */
+.mini-ui-preview {
+  background: var(--card-subtle);
+  border: 1px solid #CBD5E1;
+}
+
+.mini-tab-btn {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #475569;
+  font-family: var(--code-font);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mini-tab-btn:hover {
+  color: var(--text-ink);
+  border-color: #94A3B8;
+}
+
+.mini-tab-btn.active {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-color: #0F172A;
+  font-weight: 600;
+}
+
+/* DB Metric Panel in Card 3 */
+.db-metric-panel {
+  background: var(--card-subtle);
+  border: 1px solid #CBD5E1;
+  font-size: 0.75rem;
+}
+
+.progress-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-emerald);
+  border-radius: 3px;
+}
+
+/* VPS Pipeline in Card 4 */
+.vps-pipeline-panel {
+  background: var(--card-subtle);
+  border: 1px solid #CBD5E1;
+  font-size: 0.78rem;
+}
+
+.pipeline-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
+
+.pipeline-step.live {
+  background: var(--mint-bg);
+  border-color: var(--mint-border);
+}
+
+.step-num {
+  font-size: 0.7rem;
+}

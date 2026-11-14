@@ -1,16 +1,41 @@
-<nav class="navbar navbar-expand-lg fixed-top py-3"
-     style="background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--nav-border);">
-  <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand fw-bold text-dynamic fs-4" href="#">Surendar</a>
-    <div class="d-flex gap-4 align-items-center">
-      <a class="nav-link text-dynamic small text-decoration-none" [class.active-link]="activeSection === 'about'" href="#about">About</a>
-      <a class="nav-link text-dynamic small text-decoration-none" [class.active-link]="activeSection === 'projects'" href="#projects">Projects</a>
-      <a class="nav-link text-dynamic small text-decoration-none" [class.active-link]="activeSection === 'skills'" href="#skills">Skills</a>
-      <a class="nav-link text-dynamic small text-decoration-none" [class.active-link]="activeSection === 'contact'" href="#contact">Contact</a>
-      <a class="nav-link text-dynamic small text-decoration-none" style="cursor: pointer;" (click)="toggleTheme()">
-        <span *ngIf="isLightMode">Dark Mode</span>
-        <span *ngIf="!isLightMode">Light Mode</span>
+<header class="apple-navbar fixed-top">
+  <div class="container navbar-inner">
+    <!-- Brand -->
+    <a href="#" class="navbar-brand-link" (click)="closeMobileMenu()">
+      <span class="brand-full-name">Surendar<span class="brand-dot">.</span></span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="desktop-nav-links d-none d-md-flex align-items-center gap-4">
+      <a href="#projects" class="nav-link-item" [class.active]="activeSection === 'projects'">Projects</a>
+      <a href="#skills" class="nav-link-item" [class.active]="activeSection === 'skills'">Skills</a>
+      <a href="#experience" class="nav-link-item" [class.active]="activeSection === 'experience'">Experience</a>
+      <a href="#contact" class="nav-link-item" [class.active]="activeSection === 'contact'">Contact</a>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="d-flex align-items-center gap-3">
+      <a href="resume.pdf" target="_blank" class="apple-btn-primary nav-resume-btn d-none d-sm-inline-flex">
+        <span>Resume ↗</span>
       </a>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-menu-btn d-md-none" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
-</nav>
+
+  <!-- Mobile Dropdown -->
+  <div class="mobile-dropdown-menu" [class.show]="isMobileMenuOpen">
+    <div class="container py-3 d-flex flex-column gap-2">
+      <a href="#projects" class="mobile-nav-item" (click)="closeMobileMenu()">Projects</a>
+      <a href="#skills" class="mobile-nav-item" (click)="closeMobileMenu()">Skills</a>
+      <a href="#experience" class="mobile-nav-item" (click)="closeMobileMenu()">Experience</a>
+      <a href="#contact" class="mobile-nav-item" (click)="closeMobileMenu()">Contact</a>
+      <a href="resume.pdf" target="_blank" class="mobile-nav-item resume-item" (click)="closeMobileMenu()">Download Resume ↗</a>
+    </div>
+  </div>
+</header>

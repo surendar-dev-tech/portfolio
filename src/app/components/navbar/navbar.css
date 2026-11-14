@@ -1,0 +1,207 @@
+.apple-navbar {
+  background: rgba(22, 27, 34, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #3A4450 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 1050;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-brand-link,
+.navbar-brand-link:hover,
+.navbar-brand-link:focus,
+.navbar-brand-link:active,
+.navbar-brand-link:visited {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none !important;
+  color: #E6EDF3 !important;
+}
+
+.brand-full-name {
+  font-family: var(--display-font);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #E6EDF3 !important;
+  letter-spacing: -0.02em;
+}
+
+.brand-dot {
+  color: #4FD1C5 !important;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-item {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  color: #E6EDF3 !important;
+  text-decoration: none !important;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  line-height: 1.2;
+}
+
+.nav-link-item:hover {
+  background: #1F2630 !important;
+  color: #4FD1C5 !important;
+}
+
+.nav-link-item.active {
+  color: #4FD1C5 !important;
+  background: rgba(79, 209, 197, 0.12) !important;
+  font-weight: 600;
+}
+
+.nav-link-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-color: #4FD1C5;
+  border-radius: 2px;
+}
+
+.nav-resume-btn {
+  background-color: #4FD1C5 !important;
+  color: #0E1116 !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  font-size: 0.88rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4FD1C5 !important;
+  transition: all 0.2s ease;
+}
+
+.nav-resume-btn:hover {
+  background-color: #38B2AC !important;
+  border-color: #38B2AC !important;
+  color: #0E1116 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile Toggle */
+.mobile-menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: #1F2630;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #E6EDF3 !important;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Dropdown (below 768px) */
+.mobile-dropdown-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: #161B22 !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid #3A4450 !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-dropdown-menu.show {
+  max-height: 380px;
+}
+
+.mobile-dropdown-menu .container {
+  gap: 0 !important;
+}
+
+.mobile-nav-item {
+  color: #E6EDF3 !important;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none !important;
+  min-height: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 0;
+  border-bottom: 1px solid #262D36;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mobile-nav-item:hover {
+  background: #1F2630 !important;
+  color: #4FD1C5 !important;
+}
+
+.mobile-nav-item.resume-item {
+  background: #4FD1C5 !important;
+  color: #0E1116 !important;
+  font-weight: 700;
+  border-radius: 8px;
+  border-bottom: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.mobile-nav-item.resume-item:hover {
+  background: #38B2AC !important;
+  color: #0E1116 !important;
+}
